@@ -1,0 +1,30 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "ADF-SQL-TO-ADLS-PIPELINE"
+		},
+		"LS_ADLS_Gen2_accountKey": {
+			"value": ""
+		},
+		"LS_SQLServer_OnPrem_password": {
+			"value": ""
+		},
+		"LS_ADLS_Gen2_properties_typeProperties_url": {
+			"value": "https://adlsmigrationstore.dfs.core.windows.net/"
+		},
+		"LS_SQLServer_OnPrem_properties_typeProperties_server": {
+			"value": "AREEF"
+		},
+		"LS_SQLServer_OnPrem_properties_typeProperties_database": {
+			"value": "AzureADF"
+		},
+		"LS_SQLServer_OnPrem_properties_typeProperties_userName": {
+			"value": "AreefShaik78.azure"
+		},
+		"integrationRuntime1_properties_typeProperties_linkedInfo_resourceId": {
+			"value": "/subscriptions/c9c24519-9b5c-428e-a279-c8761f8edb31/resourcegroups/rg_dev_financeus/providers/Microsoft.DataFactory/factories/adfdevfinanceus3/integrationruntimes/integrationRuntime1"
+		}
+	}
+}
