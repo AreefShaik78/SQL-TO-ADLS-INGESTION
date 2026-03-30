@@ -1,0 +1,48 @@
+CREATE OR ALTER PROCEDURE dbo.UpdateWatermark --(change name for Sp if required)--
+    @TableSchema VARCHAR(50),
+    @TableName VARCHAR(100),
+    @WatermarkColumn VARCHAR(100)
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    DECLARE @SQL NVARCHAR(MAX);
+    DECLARE @MaxValue BIGINT;
+
+    -- Dynamic query to get max value------
+
+    SET @SQL =
+    'SELECT @MaxVal = MAX(' + QUOTENAME(@WatermarkColumn) + ')
+     FROM ' + QUOTENAME(@TableSchema) + '.' + QUOTENAME(@TableName);
+
+    EXEC sp_executesql
+        @SQL,
+        N'@MaxVal BIGINT OUTPUT',
+        @MaxVal = @MaxValue OUTPUT;
+
+    -- Handle NULL (empty table case)
+
+    SET @MaxValue = ISNULL(@MaxValue, 0);
+
+    -- UPSERT ----
+
+    IF EXISTS (
+        SELECT 1 
+        FROM dbo.ADF_Watermark_Table
+        WHERE TableName = @TableName
+          AND TableSchema = @TableSchema
+    )
+    BEGIN
+        UPDATE dbo.ADF_Watermark_Table
+        SET LastLoadValue = @MaxValue
+        WHERE TableName = @TableName
+          AND TableSchema = @TableSchema;
+    END
+    ELSE
+    BEGIN
+        INSERT INTO dbo.ADF_Watermark_Table
+        (TableSchema, TableName, WatermarkColumn, LastLoadValue)
+        VALUES
+        (@TableSchema, @TableName, @WatermarkColumn, @MaxValue);
+    END
+END;
