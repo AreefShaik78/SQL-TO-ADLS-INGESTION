@@ -169,7 +169,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 📧 Contact
 
 **Author:** [Areef Shaik]  
-**GitHub:** [@AreefShaik78](https://github.com/AreefShaik78) 
+**GitHub:** [@AreefShaik78](https://github.com/AreefShaik78)
 **Project Link:** [https://github.com/AreefShaik78/SQL-TO-ADLS-INGESTION]
 
 ---
