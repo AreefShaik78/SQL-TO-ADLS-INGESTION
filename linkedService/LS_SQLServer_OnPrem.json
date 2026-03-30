@@ -1,0 +1,22 @@
+{
+	"name": "LS_SQLServer_OnPrem",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "SqlServer",
+		"typeProperties": {
+			"server": "AREEF",
+			"database": "AzureADF",
+			"encrypt": "optional",
+			"trustServerCertificate": false,
+			"authenticationType": "SQL",
+			"userName": "AreefShaik78.azure",
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiI1NjkyNTgzMy03ZjYwLTRmMjYtOThkMy1lNTY0M2RiMDNjZjkiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+		},
+		"connectVia": {
+			"referenceName": "integrationRuntime1",
+			"type": "IntegrationRuntimeReference"
+		},
+		"description": "Selfhosted IR for Onprem Server Parent"
+	}
+}

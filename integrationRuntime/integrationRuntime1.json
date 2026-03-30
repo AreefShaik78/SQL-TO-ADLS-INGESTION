@@ -1,0 +1,12 @@
+{
+	"name": "integrationRuntime1",
+	"properties": {
+		"type": "SelfHosted",
+		"typeProperties": {
+			"linkedInfo": {
+				"resourceId": "/subscriptions/c9c24519-9b5c-428e-a279-c8761f8edb31/resourcegroups/rg_dev_financeus/providers/Microsoft.DataFactory/factories/adfdevfinanceus3/integrationruntimes/integrationRuntime1",
+				"authorizationType": "Rbac"
+			}
+		}
+	}
+}

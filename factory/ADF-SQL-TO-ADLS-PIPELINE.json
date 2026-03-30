@@ -1,0 +1,9 @@
+{
+	"name": "ADF-SQL-TO-ADLS-PIPELINE",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "d0f2156f-a130-4e8d-8632-8e5c4db4cf92",
+		"tenantId": "d828d5c0-0934-4960-a1cd-7267058f3851"
+	}
+}
