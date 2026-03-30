@@ -1,7 +1,3 @@
-Here's a more attractive and professional README for your GitHub repository:
-
----
-
 # ☁️ Azure Data Factory ETL/ELT Framework
 
 ### 🚀 On-Premise SQL Server to Azure Data Lake Storage Gen2 Migration
